@@ -1,0 +1,45 @@
+
+
+<div class="event-new">
+  <div class="bottom-color">新規イベント作成</div>
+  <div class="event-new__form">
+    <%= form_for @event do |f| %>
+      <div class="event-new__form__label">
+        <%= f.label :event_name, "イベント名" %>
+        <%= f.text_field :event_name, autofocus: true, autocomplete: "event_name", class: "form-control" %>
+      </div>
+
+      <div class="event-new__form__label">
+        <%= f.label :type_id, "イベント種目" %>
+        <%= f.select :type_id, Type.all.collect {|t| [t.name, t.id]}, {}, {class: "form-control"} %>
+      </div>
+
+      <div class="event-new__form__label">
+        <%= f.label :start_date, "開催日時" %>
+        <%= f.datetime_field :start_date, autofocus: true, autocomplete: "開催日時", class: "form-control" %>
+      </div>
+
+      <div class="event-new__form__label">
+        <%= f.label :finish_date, "終了日時" %>
+        <%= f.datetime_field :finish_date, autofocus: true, autocomplete: "終了日時", class: "form-control" %>
+      </div>
+
+      <div class="event-new__form__label">
+        <%= f.label :place_name, "開催場所名" %>
+        <%= f.text_field :place_name, autofocus: true, autocomplete: "開催場所名", class: "form-control" %>
+      </div>
+
+      <div class="event-new__form__label">
+        <%= f.label :address, "住所" %>
+        <%= f.text_field :address, autofocus: true, autocomplete: "住所", class: "form-control" %>
+      </div>
+
+      <div class="event-new__form__label">
+        <%= f.label :introduction, "イベント紹介文" %>
+        <%= f.text_area :introduction, autofocus: true, autocomplete: "イベント紹介文", class: "form-control" %>
+      </div>
+
+      <%= f.submit "編集内容を保存する", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

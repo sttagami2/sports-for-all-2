@@ -1,0 +1,255 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// indexページ
+.event-index {
+  margin-top: 30px;
+  .event-top {
+    position: relative;
+    // margin-bottom: 10px;
+    &__text {
+      margin: 0 auto;
+      width: 300px;
+    }
+    &__button {
+      position: absolute;
+      top: 0;
+      right: 50px;
+    }
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    li a {
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+      padding: 8px 0;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px 4px 0 0;
+    }
+    li a.active {
+      background: #882601;
+      color: #fff;
+    }
+    li a:not(.active):hover {
+      opacity: 0.5;
+      transition: opacity 0.4s;
+    }
+  }
+  
+  .content.active {
+    background: #812772;
+    color: #fff;
+    min-height: 0;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    // justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  
+  .content {
+    display: none;
+    a:hover {
+      text-decoration: none;
+      color: white;
+      background-color: rgb(200, 100, 210)
+    }
+  }
+
+  
+  &__item {
+    text-decoration: none;
+    width: 50%;
+    height: 400px;
+    border: 1px solid rgb(140, 70, 140);
+    color: white;
+    ul {
+      list-style: none;
+      margin:  130px 0 0 0;
+      padding: 0;
+      li {
+        margin: 0;
+        padding: 5px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    &__item {
+      width: 100%;
+    }
+  }
+  
+  .event-host {
+    margin: 80px auto 100px;
+  }
+  
+  
+  .map-area {
+    display: none;
+  }
+}
+// indexページ
+
+
+// <start> event-newページ
+.event-new {
+  width: 100%;
+  height: 100vh;
+  .bottom-color {
+    margin: 40px 0 20px 80px;
+    border-bottom: 5px solid rgb(199, 245, 73);
+    font-size: 32px;
+    padding-left: 5px;
+    display: inline-block;
+    text-align: left;
+  }
+  &__form {
+    width: 45%;
+    margin: 40px auto;
+    &__label {
+      margin: 25px auto;
+    }
+  }
+}
+// newページ
+
+
+// <start> event-showページ
+.event-show {
+  &-top {
+    height: 95vh;
+    padding: 20px 0 50px 0;
+    border-bottom: solid 2px black;
+    &__container {
+      &__item {
+        position: relative;
+        .bottom-color {
+          border-bottom: 5px solid rgb(199, 245, 73);
+          font-size: 32px;
+          padding: 0 8px;
+          margin-left: 30px;
+          display: inline-block;
+          text-align: left;
+        }
+        .event-edit {
+          position: absolute;
+          top: 50%;
+          right: 5%;
+          transform: translate(-5%, -50%);
+          -webkit-transform: translate(-5%, -50%);
+          -ms-transform: translate(-5%, -50%);
+          .icon-orange {
+            color: orange;
+            font-size: 2.5em;
+          }
+        }
+      }
+    }
+    .map-area {
+      position: relative;
+      margin: 50px 0 0 0;
+      height: 60vh;
+      #map {
+        height: 60vh;
+      }
+      &__address {
+        position: absolute;
+        top: 20%;
+        left: 2%;
+        background-color: rgba(247, 121, 121, 0.6);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        h3 {
+          width: 200px;
+          border-bottom: 1px solid white;
+          margin: 20px auto;
+        }
+        p {
+          width: 250px;
+          padding: 0 30px;
+          margin: 70px auto 0;
+        }
+      }
+    }
+    &__details {
+      margin-top: 70px;
+      &__type {
+        p {
+          font-size: 22px;
+        }
+      }
+      &__date {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &-main {
+    color: black;
+    margin-top: 40px;
+    &__item-introduction {
+      padding: 20px 60px 20px 60px;
+      height: 60vh;
+      overflow: hidden;
+      .participation-index {
+        margin: 0 auto;
+        width: 85%;
+        overflow-y: scroll;
+        height: 60vh;
+      }
+    }
+
+    &__item-participation {
+      padding: 20px;
+      height: 60vh;
+      overflow: hidden;
+      .participation-index {
+        margin: 0 auto;
+        width: 85%;
+        overflow-y: scroll;
+        height: 60vh;
+
+      }
+    }
+  }
+
+  .participation-action {
+    margin-top: 70px;
+  }
+
+  .comment-container {
+    margin: 80px auto;
+    width: 70%;
+    h2 {
+      margin-bottom: 30px;
+      text-decoration: underline;
+      text-decoration-color: #FFFF00;
+    }
+    .comment-area {
+      width: 100%;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: rgba(179, 179, 179, 0.6);
+    }
+  }
+
+
+}

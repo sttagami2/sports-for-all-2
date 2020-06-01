@@ -1,0 +1,53 @@
+<header>
+  <div class="header-top bg-dark">
+    <div>
+      <%= image_tag("logo-transparent.png", size: "168x100", style: "margin-left: 20px;") %>
+    </div>
+    <div class="search" style="margin-top: 42px; margin-right: 20px;">
+      <%= form_tag(search_path, method: :get) do %>   <%# getでsearch.htmlに飛んでる%>
+        <%= text_field_tag 'search[content]' %>
+        <%= submit_tag '検索', type: "hidden" %>
+      <% end %>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu1" aria-controls="navmenu1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navmenu1" class="collapse navbar-collapse text-center">
+      <% if user_signed_in? %>
+        <%= link_to root_path, class: 'nav-item nav-link col-xs-4 col-sm-2' do %>
+          <div class="link">Home</div>
+        <% end %>
+        <%= link_to home_about_path,class: 'nav-item nav-link col-xs-4 col-sm-2' do %>
+          <div class="link">About</div>
+        <% end %>
+        <%= link_to events_path,class: 'nav-item nav-link col-xs-4 col-sm-2' do %>
+          <div class="link">Event</div>
+        <% end %>
+        <%= link_to new_event_path,class: 'nav-item nav-link col-xs-4 col-sm-2' do %>
+          <div class="link">イベント主催</div>
+        <% end %>
+        <%= link_to user_path(current_user),class: 'nav-item nav-link col-xs-4 col-sm-2' do %>
+          <div class="link">マイページ</div>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete,class: 'nav-item nav-link col-xs-4 col-sm-2' do %>
+          <div class="link">Logout</div>
+        <% end %>
+      <% else %>
+        <%= link_to root_path,class: 'nav-item nav-link col-xs-6 col-sm-3' do %>
+          <div class="link">Home</div>
+        <% end %>
+        <%= link_to home_about_path,class: 'nav-item nav-link col-xs-6 col-sm-3' do %>
+          <div class="link">About</div>
+        <% end %>
+        <%= link_to new_user_registration_path,class: 'nav-item nav-link col-xs-6 col-sm-3' do %>
+          <div class="link">Sign up</div>
+        <% end %>
+        <%= link_to new_user_session_path ,class: 'nav-item nav-link col-xs-6 col-sm-3' do %>
+          <div class="link">Login</div>
+        <% end %>
+      <% end %>
+    </div>
+  </nav>
+</header>
